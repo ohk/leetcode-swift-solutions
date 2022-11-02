@@ -42,3 +42,23 @@ class Solution {
         return nearest[0]
     }
 }
+
+class Solution {
+    func mySqrt(_ x: Int) -> Int {
+       var left = 1, right = x, ans = 0
+    
+        while left <= right {
+            let mid = (left + right) / 2   
+            var result = mid * mid
+            if result < x {
+                ans = mid
+                left = mid + 1
+            } else if result == x {
+                return mid
+            } else {
+                right = mid - 1
+            }
+        }
+        return ans
+    }
+}
